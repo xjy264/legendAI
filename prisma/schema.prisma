@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Post {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  title         String
+  description   String
+  contentPath   String
+  category      String   @default("essay")
+  tags          String   @default("[]")
+  status        String   @default("published")
+  featured      Boolean  @default(false)
+  cover         String?
+  publishedAt   DateTime @default(now())
+  readingMinutes Int      @default(1)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model GuestbookEntry {
+  id        String   @id @default(cuid())
+  name      String
+  message   String
+  approved  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}

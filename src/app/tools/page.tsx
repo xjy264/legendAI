@@ -1,0 +1,7 @@
+import { ToolsPageContent } from "@/components/site-pages";
+
+export const dynamic = "force-dynamic";
+
+export default function Page() {
+  return ToolsPageContent({ locale: "zh" });
+}
