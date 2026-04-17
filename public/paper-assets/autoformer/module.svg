@@ -1,0 +1,30 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FFFB"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="44" fill="url(#bg)"/>
+  <text x="72" y="96" fill="#047857" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="24" font-weight="700" letter-spacing="4">KEY MODULE</text>
+  <text x="72" y="156" fill="#0F172A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="700">分解后再找依赖</text>
+
+  <rect x="74" y="236" width="290" height="280" rx="28" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="2"/>
+  <text x="122" y="290" fill="#14532D" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="700">趋势 Trend</text>
+  <path d="M108 412C148 384 184 388 224 368C264 348 292 328 340 310" stroke="#10B981" stroke-width="8" stroke-linecap="round"/>
+  <path d="M108 450C152 436 186 440 228 426C270 412 300 390 344 388" stroke="#86EFAC" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="438" y="236" width="290" height="280" rx="28" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="2"/>
+  <text x="488" y="290" fill="#14532D" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="700">季节性 Seasonal</text>
+  <path d="M472 392C506 350 538 350 572 392C606 434 638 434 672 392" stroke="#10B981" stroke-width="8" stroke-linecap="round"/>
+  <path d="M472 438C506 396 538 396 572 438C606 480 638 480 672 438" stroke="#86EFAC" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="802" y="236" width="324" height="280" rx="28" fill="#064E3B"/>
+  <text x="850" y="296" fill="#FFFFFF" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Auto-Correlation</text>
+  <text x="850" y="340" fill="#D1FAE5" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">对齐重复片段</text>
+  <circle cx="872" cy="408" r="14" fill="#D1FAE5"/>
+  <circle cx="934" cy="456" r="14" fill="#A7F3D0"/>
+  <circle cx="1002" cy="406" r="14" fill="#34D399"/>
+  <circle cx="1066" cy="454" r="14" fill="#6EE7B7"/>
+  <path d="M872 408C902 370 906 370 934 456C962 542 988 542 1002 406C1018 268 1048 270 1066 454" stroke="#34D399" stroke-width="8" stroke-linecap="round"/>
+</svg>

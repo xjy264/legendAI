@@ -293,7 +293,10 @@ export async function saveMarkdownPost(
   const normalized = markdown.trimEnd() + "\n";
 
   if (originalSlug && originalSlug !== slug) {
-    const previousPath = path.join(postsDir, `${originalSlug}.md`);
+    const previousRow = await prisma.post.findUnique({ where: { slug: originalSlug } });
+    const previousPath = previousRow?.contentPath
+      ? path.join(/* turbopackIgnore: true */ process.cwd(), previousRow.contentPath)
+      : path.join(postsDir, `${originalSlug}.md`);
     await Promise.allSettled([
       fs.rm(previousPath, { force: true }),
       prisma.post.deleteMany({ where: { slug: originalSlug } }),
@@ -351,7 +354,7 @@ export async function deleteMarkdownPost(slug: string) {
     return false;
   }
 
-  const filePath = path.join(postsDir, `${slug}.md`);
+  const filePath = path.join(/* turbopackIgnore: true */ process.cwd(), row.contentPath);
 
   await Promise.allSettled([
     fs.rm(filePath, { force: true }),

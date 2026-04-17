@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 7785",
     "build": "next build --webpack",
-    "start": "next start",
+    "start": "next start -p 7785",
     "lint": "eslint",
     "prisma:generate": "prisma generate",
     "db:push": "prisma db push",

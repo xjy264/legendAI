@@ -1,0 +1,31 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFCF7"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="44" fill="url(#bg)"/>
+  <text x="72" y="96" fill="#D97706" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="24" font-weight="700" letter-spacing="4">KEY MODULE</text>
+  <text x="72" y="156" fill="#0F172A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="700">把周期重排成二维纹理</text>
+
+  <rect x="84" y="248" width="200" height="230" rx="28" fill="#FFF7ED" stroke="#FDBA74" stroke-width="2"/>
+  <text x="130" y="314" fill="#9A3412" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Period A</text>
+  <path d="M114 394C146 356 174 356 206 394C238 432 266 432 298 394" stroke="#F59E0B" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="344" y="248" width="200" height="230" rx="28" fill="#FFFFFF" stroke="#FDBA74" stroke-width="2"/>
+  <text x="390" y="314" fill="#9A3412" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Period B</text>
+  <path d="M374 394C406 368 434 368 466 394C498 420 526 420 558 394" stroke="#F59E0B" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="604" y="248" width="200" height="230" rx="28" fill="#FFFFFF" stroke="#FDBA74" stroke-width="2"/>
+  <text x="650" y="314" fill="#9A3412" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">2D Map</text>
+  <rect x="644" y="358" width="120" height="82" rx="18" fill="#FFEDD5"/>
+  <rect x="662" y="374" width="86" height="12" rx="6" fill="#FB923C"/>
+  <rect x="662" y="398" width="64" height="12" rx="6" fill="#FDBA74"/>
+  <rect x="662" y="422" width="96" height="12" rx="6" fill="#F59E0B"/>
+
+  <rect x="864" y="248" width="260" height="230" rx="28" fill="#C2410C"/>
+  <text x="906" y="314" fill="#FFFFFF" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">TimesBlock</text>
+  <text x="906" y="352" fill="#FFEDD5" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">2D convolution</text>
+  <text x="906" y="388" fill="#FFEDD5" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">学局部纹理</text>
+</svg>

@@ -122,7 +122,7 @@ function CitationBlock({
   copiedLabel: string;
 }) {
   return (
-    <div className="grid gap-3 rounded-3xl border border-black/10 bg-white/80 p-4">
+    <div className="grid gap-3 rounded-[2rem] border border-black/10 bg-white/80 p-4">
       <div className="flex items-center justify-between gap-3">
         <p className="text-sm font-medium text-slate-950">{label}</p>
         <button
@@ -221,7 +221,7 @@ export function ToolsClient({ copy }: { copy: ToolsCopy }) {
     <div className="grid gap-6">
       <section
         id="color-converter"
-        className="rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
+        className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
       >
         <div className="mb-5 flex items-start justify-between gap-4">
           <div>
@@ -266,7 +266,7 @@ export function ToolsClient({ copy }: { copy: ToolsCopy }) {
           </div>
           <div className="grid gap-4">
             <div
-              className="min-h-32 rounded-3xl border border-black/10 shadow-inner"
+              className="min-h-32 rounded-[2rem] border border-black/10 shadow-inner"
               style={{ backgroundColor: previewHex }}
             />
             <div className="rounded-2xl bg-slate-950 p-4 text-sm text-slate-100">
@@ -279,7 +279,7 @@ export function ToolsClient({ copy }: { copy: ToolsCopy }) {
 
       <section
         id="timestamp-converter"
-        className="rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
+        className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
       >
         <p className="text-xs font-semibold tracking-[0.22em] text-emerald-700 uppercase">
           {copy.timestampTitle}
@@ -304,7 +304,7 @@ export function ToolsClient({ copy }: { copy: ToolsCopy }) {
 
       <section
         id="citation-converter"
-        className="rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
+        className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
       >
         <p className="text-xs font-semibold tracking-[0.22em] text-emerald-700 uppercase">
           {copy.citationTitle}
@@ -341,7 +341,7 @@ export function ToolsClient({ copy }: { copy: ToolsCopy }) {
         {citationResult ? (
           <div className="mt-5 grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="grid gap-4">
-              <div className="rounded-3xl border border-black/10 bg-white/80 p-4">
+              <div className="rounded-[2rem] border border-black/10 bg-white/80 p-4">
                 <p className="text-xs font-semibold tracking-[0.22em] text-emerald-700 uppercase">
                   {copy.metadataTitle}
                 </p>
@@ -390,7 +390,7 @@ export function ToolsClient({ copy }: { copy: ToolsCopy }) {
 
       <section
         id="slug-helper"
-        className="rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
+        className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl"
       >
         <p className="text-xs font-semibold tracking-[0.22em] text-emerald-700 uppercase">
           {copy.slugTitle}

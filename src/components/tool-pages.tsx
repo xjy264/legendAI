@@ -44,12 +44,12 @@ function ToolShell({
     <div className="grid gap-6">
       <Link
         href={toolsPath}
-        className="text-sm text-slate-500 transition hover:text-slate-950"
+        className="text-xs font-medium uppercase tracking-[0.24em] text-slate-500 transition hover:text-slate-950"
       >
         {locale === "en" ? "Back to tools" : "返回工具箱"}
       </Link>
       <SectionHeading kicker={kicker} title={title} description={description} />
-      <div className="rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+      <div className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
         {children}
       </div>
     </div>
@@ -76,7 +76,7 @@ function CopyBlock({
   }
 
   return (
-    <div className="grid gap-3 rounded-3xl border border-black/10 bg-slate-950 p-5 text-slate-100">
+    <div className="grid gap-3 rounded-[2rem] border border-black/10 bg-slate-950 p-5 text-slate-100">
       <div className="flex items-center justify-between gap-3">
         <h3 className="font-semibold">{label}</h3>
         <button
@@ -220,7 +220,7 @@ export function DoiToolPageContent({
 
       {record && formats ? (
         <div className="mt-6 grid gap-4">
-          <div className="rounded-3xl border border-black/10 bg-slate-50 p-5">
+          <div className="rounded-[2rem] border border-black/10 bg-slate-50 p-5">
             <p className="text-xs font-semibold tracking-[0.22em] text-slate-500 uppercase">
               {copy.metadataTitle}
             </p>
@@ -548,7 +548,7 @@ export function TimeToolPageContent({
         </div>
 
         <div className="grid gap-4">
-          <div className="rounded-3xl border border-black/10 bg-slate-50 p-5">
+          <div className="rounded-[2rem] border border-black/10 bg-slate-50 p-5">
             <p className="text-xs font-semibold tracking-[0.22em] text-slate-500 uppercase">
               {labels.result}
             </p>
@@ -644,7 +644,7 @@ export function TextToolPageContent({
             rows={10}
             value={value}
             onChange={(event) => setValue(event.target.value)}
-            className="rounded-3xl border border-black/10 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-emerald-300"
+            className="rounded-[2rem] border border-black/10 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-emerald-300"
           />
         </label>
 
@@ -661,7 +661,7 @@ export function TextToolPageContent({
             buttonLabel={locale === "en" ? "Copy" : "复制"}
             copiedLabel={locale === "en" ? "Copied" : "已复制"}
           />
-          <div className="grid gap-3 rounded-3xl border border-black/10 bg-slate-50 p-5 text-sm text-slate-700">
+          <div className="grid gap-3 rounded-[2rem] border border-black/10 bg-slate-50 p-5 text-sm text-slate-700">
             <div>
               <span className="text-slate-500">{labels.trimmed}</span>
               <p className="font-medium text-slate-950">{normalized || "-"}</p>

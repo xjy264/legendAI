@@ -1,0 +1,32 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="44" fill="url(#bg)"/>
+  <text x="72" y="96" fill="#334155" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="24" font-weight="700" letter-spacing="4">KEY MODULE</text>
+  <text x="72" y="156" fill="#0F172A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="700">把趋势和季节性分别线性建模</text>
+
+  <rect x="84" y="250" width="180" height="220" rx="28" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="126" y="314" fill="#0F172A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Trend</text>
+  <path d="M114 392C154 372 182 366 224 340" stroke="#64748B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M114 432C154 418 182 412 224 388" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="324" y="250" width="180" height="220" rx="28" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="360" y="314" fill="#0F172A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Seasonal</text>
+  <path d="M346 394C370 350 404 350 428 394C452 438 486 438 510 394" stroke="#64748B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M346 440C370 396 404 396 428 440C452 484 486 484 510 440" stroke="#CBD5E1" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="564" y="250" width="180" height="220" rx="28" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="602" y="314" fill="#0F172A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Linear</text>
+  <rect x="598" y="360" width="112" height="18" rx="9" fill="#64748B"/>
+  <rect x="598" y="392" width="82" height="18" rx="9" fill="#94A3B8"/>
+  <rect x="598" y="424" width="96" height="18" rx="9" fill="#CBD5E1"/>
+
+  <rect x="804" y="250" width="312" height="220" rx="28" fill="#0F172A"/>
+  <text x="848" y="314" fill="#FFFFFF" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Forecast</text>
+  <text x="848" y="354" fill="#E2E8F0" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">简单，但足够强</text>
+  <text x="848" y="392" fill="#E2E8F0" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">前提是分解先做好</text>
+</svg>

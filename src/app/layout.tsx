@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Cormorant_Garamond, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, Lora } from "next/font/google";
 
 import { SiteShell } from "@/components/site-shell";
 import { getLocaleFromHeader } from "@/lib/i18n";
@@ -20,13 +20,13 @@ const mono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-const serif = Cormorant_Garamond({
+const serif = Lora({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:7785";
 
 export async function generateMetadata(): Promise<Metadata> {
   const headerStore = await headers();

@@ -1,9 +1,9 @@
 export const site = {
-  name: "XJY Stack",
-  shortName: "XJY",
+  name: "LegendAI",
+  shortName: "JUST TO DO",
   description:
-    "A personal technical stack for papers, projects, release notes, and long-term writing.",
-  author: "XJY",
+    "A personal site for papers, projects, release notes, and long-term writing.",
+  author: "传奇不会飞",
   adminPath: "/studio/xjy-7a9f",
   nav: [
     { href: "/", label: "Home" },

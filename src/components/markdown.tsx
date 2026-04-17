@@ -1,4 +1,5 @@
 import ReactMarkdown, { type Components } from "react-markdown";
+import Image from "next/image";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
@@ -8,6 +9,8 @@ type MarkdownCodeProps = ComponentPropsWithoutRef<"code"> & {
   inline?: boolean;
   children?: ReactNode;
 };
+
+type MarkdownImageProps = ComponentPropsWithoutRef<"img">;
 
 const components: Components = {
   h1: ({ children }) => (
@@ -36,6 +39,16 @@ const components: Components = {
       {children}
     </a>
   ),
+  img: ({ src, alt }: MarkdownImageProps) =>
+    typeof src === "string" ? (
+      <Image
+        src={src}
+        alt={alt ?? ""}
+        width={1200}
+        height={675}
+        className="my-8 block h-auto w-full rounded-[1.75rem] border border-black/10 bg-white object-cover shadow-[0_18px_60px_rgba(15,23,42,0.12)]"
+      />
+    ) : null,
   code: ({ inline, children }: MarkdownCodeProps) =>
     inline ? (
       <code className="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-sm text-slate-900">
@@ -59,7 +72,7 @@ const components: Components = {
 
 export function MarkdownContent({ content }: { content: string }) {
   return (
-    <article className="rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:p-10">
+    <article className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:p-10">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}

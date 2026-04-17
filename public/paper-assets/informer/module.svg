@@ -1,0 +1,31 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="44" fill="url(#bg)"/>
+  <text x="72" y="96" fill="#2563EB" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="24" font-weight="700" letter-spacing="4">KEY MODULE</text>
+  <text x="72" y="156" fill="#0F172A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="700">把注意力算在更值钱的地方</text>
+
+  <rect x="84" y="250" width="180" height="220" rx="28" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="2"/>
+  <text x="126" y="312" fill="#1E3A8A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Q1</text>
+  <text x="118" y="350" fill="#1E3A8A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">高信息量</text>
+  <path d="M116 396H232" stroke="#3B82F6" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="312" y="250" width="180" height="220" rx="28" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="2"/>
+  <text x="350" y="312" fill="#1E3A8A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Q2</text>
+  <text x="342" y="350" fill="#1E3A8A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">普通查询</text>
+  <path d="M344 396H460" stroke="#BFDBFE" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="540" y="250" width="180" height="220" rx="28" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="2"/>
+  <text x="578" y="312" fill="#1E3A8A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Q3</text>
+  <text x="564" y="350" fill="#1E3A8A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">普通查询</text>
+  <path d="M572 396H688" stroke="#BFDBFE" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="796" y="250" width="326" height="220" rx="28" fill="#1D4ED8"/>
+  <text x="846" y="312" fill="#FFFFFF" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700">Sparse Selection</text>
+  <text x="846" y="352" fill="#DBEAFE" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">只把算力给高价值 query</text>
+  <text x="846" y="392" fill="#DBEAFE" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">保留最值得看的依赖</text>
+</svg>

@@ -12,10 +12,34 @@ export async function POST(request: Request) {
   const markdownText = String(formData.get("markdown") ?? "");
   const markdownFile = formData.get("markdownFile");
   const originalSlug = String(formData.get("originalSlug") ?? "");
+  const query = String(formData.get("q") ?? "").trim();
+  const page = String(formData.get("page") ?? "").trim();
   const adminPath = getAdminReturnPath(request);
 
+  function redirectParams(extra: Record<string, string>) {
+    const params = new URLSearchParams();
+    for (const [key, value] of Object.entries(extra)) {
+      if (value) {
+        params.set(key, value);
+      }
+    }
+
+    if (query) {
+      params.set("q", query);
+    }
+
+    if (page && page !== "1") {
+      params.set("page", page);
+    }
+
+    return params.toString();
+  }
+
   if (!isAdminRequestAuthorized(request.headers.get("cookie"), password)) {
-    return NextResponse.redirect(new URL(`${adminPath}?error=bad-password`, request.url), 303);
+    return NextResponse.redirect(
+      new URL(`${adminPath}?${redirectParams({ error: "bad-password" })}`, request.url),
+      303,
+    );
   }
 
   let markdown = markdownText.trim();
@@ -27,7 +51,10 @@ export async function POST(request: Request) {
   }
 
   if (!markdown.trim()) {
-    return NextResponse.redirect(new URL(`${adminPath}?error=missing-markdown`, request.url), 303);
+    return NextResponse.redirect(
+      new URL(`${adminPath}?${redirectParams({ error: "missing-markdown" })}`, request.url),
+      303,
+    );
   }
 
   try {
@@ -44,11 +71,17 @@ export async function POST(request: Request) {
     }
     revalidatePath("/studio/xjy-7a9f");
     revalidatePath("/en/studio/xjy-7a9f");
-    return NextResponse.redirect(new URL(`${adminPath}?saved=${post.slug}&slug=${post.slug}`, request.url), 303);
+    return NextResponse.redirect(
+      new URL(
+        `${adminPath}?${redirectParams({ saved: post.slug, slug: post.slug })}`,
+        request.url,
+      ),
+      303,
+    );
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown-error";
     return NextResponse.redirect(
-      new URL(`${adminPath}?error=${encodeURIComponent(message)}`, request.url),
+      new URL(`${adminPath}?${redirectParams({ error: message })}`, request.url),
       303,
     );
   }

@@ -1,0 +1,46 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECFDF5"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="260" y1="180" x2="940" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10B981"/>
+      <stop offset="1" stop-color="#065F46"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="44" fill="url(#bg)"/>
+  <circle cx="1030" cy="110" r="140" fill="#D1FAE5" fill-opacity="0.6"/>
+  <circle cx="135" cy="560" r="170" fill="#A7F3D0" fill-opacity="0.35"/>
+  <text x="76" y="116" fill="#047857" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26" font-weight="700" letter-spacing="4">AUTOFORMER</text>
+  <text x="76" y="184" fill="#0F172A" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="58" font-weight="700">先拆趋势，再做建模</text>
+  <text x="76" y="232" fill="#475569" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="26">把长序列里的趋势、季节性和噪声分开处理</text>
+
+  <rect x="78" y="300" width="150" height="90" rx="24" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="2"/>
+  <text x="111" y="353" fill="#064E3B" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="24" font-weight="700">输入序列</text>
+
+  <path d="M239 345H285" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M275 331L295 345L275 359" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="300" y="278" width="200" height="140" rx="28" fill="#DCFCE7" stroke="#86EFAC" stroke-width="2"/>
+  <text x="340" y="334" fill="#14532D" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="700">Series</text>
+  <text x="320" y="370" fill="#14532D" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="700">Decomposition</text>
+
+  <path d="M512 345H558" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M548 331L568 345L548 359" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="575" y="228" width="220" height="110" rx="26" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="2"/>
+  <text x="630" y="292" fill="#064E3B" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="24" font-weight="700">Trend</text>
+  <rect x="575" y="358" width="220" height="110" rx="26" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="2"/>
+  <text x="617" y="422" fill="#064E3B" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="24" font-weight="700">Seasonal</text>
+
+  <path d="M812 345H858" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M848 331L868 345L848 359" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="880" y="278" width="238" height="140" rx="28" fill="#064E3B"/>
+  <text x="920" y="334" fill="#FFFFFF" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="700">Auto-Correlation</text>
+  <text x="920" y="372" fill="#D1FAE5" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22">找重复时间延迟</text>
+
+  <path d="M790 570C860 520 940 520 1010 570" stroke="#10B981" stroke-width="8" stroke-linecap="round"/>
+  <path d="M84 582C160 552 240 552 316 582" stroke="#A7F3D0" stroke-width="10" stroke-linecap="round"/>
+</svg>

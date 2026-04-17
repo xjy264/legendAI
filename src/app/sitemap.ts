@@ -5,7 +5,7 @@ import { localizedPath } from "@/lib/i18n";
 
 export const dynamic = "force-dynamic";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:7785";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await listPublishedPosts();

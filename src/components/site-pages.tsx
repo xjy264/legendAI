@@ -1,10 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { PostCard, ProjectCard, StatCard, ToolCard } from "@/components/cards";
+import { PostCard, ProjectCard, ToolCard, ToolMenuCard } from "@/components/cards";
 import { MarkdownContent } from "@/components/markdown";
 import { SectionHeading } from "@/components/section-heading";
-import { ToolsClient } from "@/components/tools-client";
 import { getPostBySlug, listPublishedPosts, listRecentPosts } from "@/lib/content";
 import { Locale, localizedPath } from "@/lib/i18n";
 import { listGuestbookEntries as listGuestbookEntriesFromDb } from "@/lib/guestbook";
@@ -25,51 +25,16 @@ export async function HomePageContent({ locale }: { locale: Locale }) {
 
   return (
     <div className="grid gap-10 lg:gap-14">
-      <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-        <div className="space-y-6">
-          <span className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold tracking-[0.22em] text-emerald-700 uppercase">
-            {content.home.badge}
-          </span>
-          <h1 className="max-w-4xl text-5xl leading-none font-semibold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
-            {content.home.title}
-          </h1>
-          <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            {content.home.description}
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href={localizedPath(locale, "/articles")}
-              className="rounded-full bg-slate-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
-            >
-              {content.common.readArchive}
-            </Link>
-            <Link
-              href={localizedPath(locale, "/projects")}
-              className="rounded-full border border-black/10 bg-white/70 px-5 py-3 text-sm font-medium text-slate-900 backdrop-blur-xl transition hover:border-emerald-200 hover:bg-white"
-            >
-              {content.home.latestProjectTitle}
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid gap-4 rounded-[2rem] border border-black/10 bg-white/65 p-5 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl">
-          <div className="rounded-[1.75rem] border border-black/10 bg-slate-950 p-5 text-white">
-            <p className="text-xs font-semibold tracking-[0.24em] text-emerald-300 uppercase">
-              {content.home.signalKicker}
-            </p>
-            <p className="mt-4 text-3xl font-semibold tracking-tight">
-              {content.home.signalTitle}
-            </p>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
-              {content.home.signalDescription}
-            </p>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {content.stats.map((stat) => (
-              <StatCard key={stat.label} label={stat.label} value={stat.value} />
-            ))}
-          </div>
-        </div>
+      <section className="space-y-6">
+        <span className="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold tracking-[0.12em] text-emerald-700">
+          {content.home.badge}
+        </span>
+        <h1 className="max-w-5xl font-serif text-4xl font-bold leading-tight tracking-tight text-slate-950 md:text-5xl">
+          {content.home.title}
+        </h1>
+        <p className="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+          {content.home.description}
+        </p>
       </section>
 
       <section className="grid gap-6 xl:grid-cols-2">
@@ -78,6 +43,10 @@ export async function HomePageContent({ locale }: { locale: Locale }) {
             kicker={content.home.latestBlogKicker}
             title={content.home.latestBlogTitle}
             description={content.home.latestBlogDescription}
+            kickerClassName="text-slate-950"
+            titleClassName="text-emerald-700"
+            actionLabel="ALL"
+            actionHref={localizedPath(locale, "/articles")}
           />
           <div className="grid gap-4">
             {latestPosts.map((post) => (
@@ -98,6 +67,10 @@ export async function HomePageContent({ locale }: { locale: Locale }) {
             kicker={content.home.latestProjectKicker}
             title={content.home.latestProjectTitle}
             description={content.home.latestProjectDescription}
+            kickerClassName="text-slate-950"
+            titleClassName="text-emerald-700"
+            actionLabel="ALL"
+            actionHref={localizedPath(locale, "/projects")}
           />
           <div className="grid gap-4">
             {latestProjects.map((project) => (
@@ -118,8 +91,12 @@ export async function HomePageContent({ locale }: { locale: Locale }) {
             kicker={content.home.toolsKicker}
             title={content.home.toolsTitle}
             description={content.home.toolsDescription}
+            kickerClassName="text-slate-950"
+            titleClassName="text-emerald-700"
+            actionLabel="ALL"
+            actionHref={localizedPath(locale, "/tools")}
           />
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2">
             {toolCards.map((tool) => (
               <ToolCard key={tool.title} {...tool} />
             ))}
@@ -131,12 +108,16 @@ export async function HomePageContent({ locale }: { locale: Locale }) {
             kicker={content.guestbook.kicker}
             title={content.guestbook.title}
             description={content.guestbook.description}
+            kickerClassName="text-slate-950"
+            titleClassName="text-emerald-700"
+            actionLabel="ALL"
+            actionHref={localizedPath(locale, "/guestbook")}
           />
           <div className="grid gap-4">
             {entries.slice(0, 3).map((entry) => (
               <article
                 key={entry.id}
-                className="rounded-3xl border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
+                className="rounded-[2rem] border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
               >
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="font-semibold text-slate-950">{entry.name}</h3>
@@ -210,11 +191,8 @@ export async function ArticlePageContent({
 
       <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
         <span>{formatDate(post.publishedAt, locale)}</span>
-        <span>路</span>
         <span>{post.readingMinutes} min read</span>
-        <span>路</span>
         <span>{post.category}</span>
-        <span>路</span>
         {post.tags.map((tag) => (
           <span key={tag} className="rounded-full bg-white/70 px-3 py-1">
             #{tag}
@@ -222,12 +200,25 @@ export async function ArticlePageContent({
         ))}
       </div>
 
+      {post.cover ? (
+        <div className="overflow-hidden rounded-[2rem] border border-black/10 bg-white/75 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl">
+          <Image
+            src={post.cover}
+            alt={post.title}
+            width={1200}
+            height={675}
+            priority
+            className="block h-auto w-full"
+          />
+        </div>
+      ) : null}
+
       <MarkdownContent content={post.content} />
 
       <div className="grid gap-4 md:grid-cols-2">
         <Link
           href={previous ? localizedPath(locale, `/articles/${previous.slug}`) : localizedPath(locale, "/articles")}
-          className="rounded-3xl border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl transition hover:border-emerald-200"
+          className="rounded-[2rem] border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl transition hover:border-emerald-200"
         >
           <p className="text-xs font-semibold tracking-[0.22em] text-slate-500 uppercase">
             {content.articles.previous}
@@ -238,7 +229,7 @@ export async function ArticlePageContent({
         </Link>
         <Link
           href={next ? localizedPath(locale, `/articles/${next.slug}`) : localizedPath(locale, "/articles")}
-          className="rounded-3xl border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl transition hover:border-emerald-200"
+          className="rounded-[2rem] border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl transition hover:border-emerald-200"
         >
           <p className="text-xs font-semibold tracking-[0.22em] text-slate-500 uppercase">
             {next ? content.articles.next : content.common.backToArchive}
@@ -273,7 +264,7 @@ export async function GuestbookPageContent({
       />
 
       {posted ? (
-        <div className="rounded-3xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm text-emerald-800">
+        <div className="rounded-[2rem] border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm text-emerald-800">
           {content.guestbook.posted}
         </div>
       ) : null}
@@ -281,7 +272,7 @@ export async function GuestbookPageContent({
       <form
         action="/api/guestbook"
         method="post"
-        className="grid gap-4 rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
+        className="grid gap-4 rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
       >
         <div className="grid gap-4 md:grid-cols-2">
           <label className="grid gap-2 text-sm text-slate-600">
@@ -315,7 +306,7 @@ export async function GuestbookPageContent({
           entries.map((entry) => (
             <article
               key={entry.id}
-              className="rounded-3xl border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
+              className="rounded-[2rem] border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
             >
               <div className="flex items-center justify-between gap-3">
                 <h3 className="font-semibold text-slate-950">{entry.name}</h3>
@@ -327,7 +318,7 @@ export async function GuestbookPageContent({
             </article>
           ))
         ) : (
-          <div className="rounded-3xl border border-black/10 bg-white/75 p-5 text-sm text-slate-600 backdrop-blur-xl">
+          <div className="rounded-[2rem] border border-black/10 bg-white/75 p-5 text-sm text-slate-600 backdrop-blur-xl">
             {content.common.emptyGuestbook}
           </div>
         )}
@@ -347,7 +338,7 @@ export function AboutPageContent({ locale }: { locale: Locale }) {
         description={content.about.description}
       />
 
-      <div className="grid gap-4 rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+      <div className="grid gap-4 rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
         <p className="text-sm leading-8 text-slate-700">{content.about.body1}</p>
         <p className="text-sm leading-8 text-slate-700">{content.about.body2}</p>
       </div>
@@ -356,7 +347,7 @@ export function AboutPageContent({ locale }: { locale: Locale }) {
         {content.about.cards.map((card) => (
           <div
             key={card.title}
-            className="rounded-3xl border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
+            className="rounded-[2rem] border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
           >
             <p className="text-xs font-semibold tracking-[0.22em] text-emerald-700 uppercase">
               {card.title}
@@ -411,7 +402,7 @@ export function ReleaseNotesPageContent({ locale }: { locale: Locale }) {
         {content.releaseNotes.map((entry) => (
           <div
             key={entry.version}
-            className="rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
+            className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
           >
             <div className="flex items-start justify-between gap-4">
               <h3 className="text-lg font-semibold text-slate-950">{entry.version}</h3>
@@ -439,19 +430,14 @@ export function ToolsPageContent({ locale }: { locale: Locale }) {
         description={content.toolsPage.description}
       />
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
         {content.tools.map((tool) => (
-          <div
+          <ToolMenuCard
             key={tool.title}
-            className="rounded-3xl border border-black/10 bg-white/75 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
-          >
-            <h3 className="text-lg font-semibold text-slate-950">{tool.title}</h3>
-            <p className="mt-3 text-sm leading-7 text-slate-600">{tool.description}</p>
-          </div>
+            {...tool}
+          />
         ))}
       </div>
-
-      <ToolsClient copy={{ ...content.toolsPage, locale }} />
     </div>
   );
 }
@@ -479,12 +465,12 @@ export async function StudioPageContent({
       />
 
       {saved ? (
-        <div className="rounded-3xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm text-emerald-800">
+        <div className="rounded-[2rem] border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm text-emerald-800">
           {content.admin.saved}: {saved}
         </div>
       ) : null}
       {error ? (
-        <div className="rounded-3xl border border-rose-200 bg-rose-50 px-5 py-4 text-sm text-rose-800">
+        <div className="rounded-[2rem] border border-rose-200 bg-rose-50 px-5 py-4 text-sm text-rose-800">
           {error}
         </div>
       ) : null}
@@ -493,7 +479,7 @@ export async function StudioPageContent({
         action="/api/admin/posts"
         method="post"
         encType="multipart/form-data"
-        className="grid gap-4 rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
+        className="grid gap-4 rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl"
       >
         <div className="grid gap-4 md:grid-cols-2">
           <label className="grid gap-2 text-sm text-slate-600">
@@ -522,7 +508,7 @@ export async function StudioPageContent({
             name="markdown"
             rows={14}
             placeholder={content.admin.placeholder}
-            className="rounded-3xl border border-black/10 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-emerald-300"
+            className="rounded-[2rem] border border-black/10 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-emerald-300"
           />
         </label>
 
@@ -531,7 +517,7 @@ export async function StudioPageContent({
         </button>
       </form>
 
-      <div className="rounded-3xl border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+      <div className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-xl">
         <h2 className="text-xl font-semibold tracking-tight text-slate-950">{content.admin.recentPosts}</h2>
         <div className="mt-4 grid gap-3">
           {recentPosts.map((post) => (

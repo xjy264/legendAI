@@ -1,18 +1,41 @@
 ---
 slug: informer
-title: Informer：先把长序列算得动
-description: 读 Informer 的时候，我更在意的是它怎么让长序列跑得起来，而不是它是不是最后的最强模型。
-tags: [Informer, efficient-attention, long-sequence, paper-notes]
+title: Informer：先把长序列压缩，再谈高效注意力
+description: Informer 的重点不是把 Transformer 变成另一个怪物，而是先用 ProbSparse 和 distilling 把长序列变短，再让模型把算力用在更值得看的位置。
+tags: [Informer, ProbSparse, distilling, long-sequence]
 category: 论文笔记
 status: published
 featured: true
+cover: /paper-assets/informer/cover.png
 publishedAt: 2025-07-09
 ---
 
-长序列预测里，Informer 的价值很工程，也很诚实。它不假装注意力可以无限算，而是直接承认：序列太长，先想办法降成本。
+我读 Informer 时最先记住的，不是它是不是“最强”，而是它说话很诚实：长序列真的太贵了，那就先想办法把它压缩，再来谈注意力。
 
-它的两个关键词我一直记得很清楚。一个是 ProbSparse attention，意思是别把力气平均撒在所有 token 上，而是优先盯住那些更值得看的 query。另一个是 distilling，把序列一层层压短，让模型在更可控的长度上继续往前走。再往后是生成式解码，尽量一次把未来拉出来，而不是一步步拖着走。
+## 它到底解决了什么
+长序列预测里，标准全量注意力的麻烦很直接。长度一上来，计算和显存都会被迅速拉爆。Informer 没有假装问题不存在，而是直接承认：如果把所有 token 都平等地看一遍，很多算力其实是浪费的。
 
-这篇论文对我最大的启发不是“Informer 很强”，而是“长序列问题首先是算力和表达方式的问题”。如果输入一长就炸，模型再漂亮也没法用。Informer 让我意识到，做研究不能只盯着指标，还得看方案能不能真的跑通。
+所以它的主线很清楚：
 
-我现在回头看它，会把它当成一篇典型的过渡论文：它未必是最后答案，但它把“怎么让长序列先活下来”这件事说清楚了。
+1. 用 `ProbSparse Attention` 先把注意力集中到更重要的 query 上。
+2. 用 `distilling` 在层与层之间压缩序列长度。
+3. 用生成式解码器一次性输出未来，而不是一步一步拖着走。
+
+![Informer 核心结构](/paper-assets/informer/detail.png)
+
+## 两个词最关键
+`ProbSparse` 的意思不是“随机省事”，而是从信息量角度筛掉不值得大算的部分。它试图回答的不是“每个 token 都该看谁”，而是“哪些 query 值得更认真地算一遍”。
+
+`distilling` 更像一个工程上的诚实做法。既然高层表示里已经有了足够多的结构信息，那就没必要一直保留原始长度。把序列压短，后面的层才有机会把复杂度控制住。
+
+## 我对它的理解
+Informer 给我的最大启发，不是某个公式，而是一个判断顺序：
+
+- 先判断问题是不是“太长”。
+- 再判断有没有办法把注意力集中起来。
+- 最后才考虑模型还要不要继续加深。
+
+它像一篇很典型的过渡型论文：没有假装解决所有问题，但把“长序列怎么活下来”这件事说得很清楚。
+
+## 一句话总结
+Informer 不是在证明注意力无所不能，而是在告诉我们：长序列建模首先要学会省算力。

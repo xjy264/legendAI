@@ -143,8 +143,8 @@ type SiteData = {
 const zh: SiteData = {
   site: {
     name: "LegendAI",
-    shortName: "LegendAI",
-    description: "LegendAI 是传奇不会飞的个人站，放论文、项目和长期写作。",
+    shortName: "JUST TO DO",
+    description: "JUST TO DO 是一个把论文、项目和长期写作放在一起的个人站点。",
     author: "传奇不会飞",
     adminPath: "/studio/xjy-7a9f",
   },
@@ -158,7 +158,7 @@ const zh: SiteData = {
   ],
   switcher: { label: "English" },
   common: {
-    footer: "创作让这个地方一直活着。",
+    footer: "JUST TO DO",
     editorNote: "隐藏投稿入口",
     submit: "提交",
     readArchive: "看归档",
@@ -173,21 +173,21 @@ const zh: SiteData = {
     invalidPassword: "密码不对，再试一次。",
   },
   home: {
-    badge: "LegendAI · Dispatch",
-    title: "在论文、项目和长期写作里，给自己留一个工作台",
+    badge: "LegendAI-find and do",
+    title: "去沉淀，去发现",
     description:
-      "读完一篇论文，我会把能说清楚的地方写下来；做完一个项目，我会把关键决策留下来；旧年份也会慢慢补齐。",
+      "人生是旷野，追逐你想要的生活",
     signalKicker: "正在写",
     signalTitle: "论文、项目、回填",
     signalDescription: "这不是一次性展示页，而是我会一直往里填东西的地方。",
-    latestBlogKicker: "最近写的博客",
-    latestBlogTitle: "最近留下来的内容",
+    latestBlogKicker: "读过的论文和技术博客",
+    latestBlogTitle: "最近写的博客",
     latestBlogDescription: "先看最新的几篇，能最快知道我最近在想什么。",
-    latestProjectKicker: "最近做的项目",
-    latestProjectTitle: "最近在推进的东西",
+    latestProjectKicker: "个人项目",
+    latestProjectTitle: "最近做的项目",
     latestProjectDescription: "把还在动的项目放前面，比静态履历更有用。",
-    toolsKicker: "小工具",
-    toolsTitle: "顺手的小台子",
+    toolsKicker: "顺手做的提效工具",
+    toolsTitle: "工具箱",
     toolsDescription: "文章之外留一点实用感。",
   },
   stats: [
@@ -263,8 +263,8 @@ const zh: SiteData = {
     submitAnother: "继续投稿",
   },
   guestbook: {
-    kicker: "留言板",
-    title: "留一句话",
+    kicker: "留一句话",
+    title: "留言板",
     description: "公开留言会和站内内容放在一起，页面会更像一个一直在工作的地方。",
     posted: "留言已发布。",
     name: "名字",
@@ -273,7 +273,7 @@ const zh: SiteData = {
   },
   about: {
     kicker: "关于",
-    title: "LegendAI",
+    title: "JUST TO DO",
     description: "为论文、项目和写作准备的工作台。",
     body1:
       "我更想把它做成一个一直能用、一直能写的地方，而不是一页很快过时的介绍页。",
@@ -341,8 +341,8 @@ const zh: SiteData = {
 const en: SiteData = {
   site: {
     name: "LegendAI",
-    shortName: "LegendAI",
-    description: "LegendAI is a living home for papers, projects, and long-form notes.",
+    shortName: "JUST TO DO",
+    description: "JUST TO DO is a living home for papers, projects, and long-form notes.",
     author: "传奇不会飞",
     adminPath: "/studio/xjy-7a9f",
   },
@@ -356,7 +356,7 @@ const en: SiteData = {
   ],
   switcher: { label: "中文" },
   common: {
-    footer: "LegendAI keeps papers, projects, and long-form notes in one living place.",
+    footer: "JUST TO DO keeps papers, projects, and long-form notes in one living place.",
     editorNote: "Hidden submission path",
     submit: "Submit",
     readArchive: "Read archive",
@@ -371,22 +371,22 @@ const en: SiteData = {
     invalidPassword: "Wrong password. Try again.",
   },
   home: {
-    badge: "LegendAI / 传奇不会飞",
-    title: "A living home for papers, projects, and long-form notes",
+    badge: "LegendAI-find and do",
+    title: "Settle in, discover more",
     description:
       "I use this site like a long-running notebook: papers turn into notes, projects turn into records, and older years get filled in when I have time.",
     signalKicker: "Current mode",
     signalTitle: "Read, build, backfill",
     signalDescription:
       "This is not a one-off portfolio page. It is a place I keep feeding over time, at the same pace as my research and writing.",
-    latestBlogKicker: "Recent writing",
-    latestBlogTitle: "Latest posts",
+    latestBlogKicker: "Papers read and technical blogs",
+    latestBlogTitle: "Recent posts I wrote",
     latestBlogDescription: "The freshest things on the site, sorted by the last time I touched them.",
-    latestProjectKicker: "Recent projects",
-    latestProjectTitle: "What is moving now",
+    latestProjectKicker: "Personal projects",
+    latestProjectTitle: "Recent projects",
     latestProjectDescription: "The most active work gets the front slot.",
-    toolsKicker: "Tools",
-    toolsTitle: "Small utilities",
+    toolsKicker: "Utility helpers",
+    toolsTitle: "Toolbox",
     toolsDescription: "A few lightweight tools so the site still feels useful between posts.",
   },
   stats: [
@@ -462,8 +462,8 @@ const en: SiteData = {
     submitAnother: "Submit another post",
   },
   guestbook: {
-    kicker: "Guestbook",
-    title: "Leave a line",
+    kicker: "Leave a line",
+    title: "Message board",
     description: "Public notes live next to the site content so the page feels active.",
     posted: "Your note has been published.",
     name: "Name",
@@ -472,7 +472,7 @@ const en: SiteData = {
   },
   about: {
     kicker: "About",
-    title: "Why LegendAI exists",
+    title: "Why JUST TO DO exists",
     description: "I wanted a site that feels like a desk I can keep working on, not a brochure.",
     body1:
       "This site is built for the way I actually write: read something, think about it, then turn it into a note that still makes sense months later.",
